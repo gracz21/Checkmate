@@ -1,0 +1,16 @@
+#version 330
+
+//Proste cieniowanie nieuwzglêdniaj¹ce œwiate³, wykorzystywane przy rysowaniu odbiæ obiektów sceny 
+
+//Zmienne jednorodne
+uniform sampler2D textureMap0;
+
+//Atrybuty z vshadera
+in vec2 iTexCoord;
+
+//Zmienne wyjsciowe
+out vec4 pixelColor;
+
+void main(void) {
+	pixelColor = texture(textureMap0, iTexCoord);
+}

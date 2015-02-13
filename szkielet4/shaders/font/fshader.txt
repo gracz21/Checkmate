@@ -1,0 +1,17 @@
+#version 330
+
+//Cieniowanie dla czcionek
+
+//Zmienne jednorodne
+uniform sampler2D textureMap0;
+
+//Atrybuty
+in vec2 texCoord;
+
+//Zmienne wyjsciowe
+out vec4 pixelColor;
+
+void main(void) {
+	vec4 texColor = texture2D(textureMap0, texCoord);
+	pixelColor = vec4(1,1,1,texColor.a);
+}

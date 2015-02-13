@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\shaders">
+      <UniqueIdentifier>{971620e5-093a-4d46-9f77-7184430047bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\files">
+      <UniqueIdentifier>{fa8b4150-3d13-4ff1-b3f7-7294057bf600}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\shaders\simple">
+      <UniqueIdentifier>{82c705ab-cfa0-47ca-9730-65dd6a05635c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\shaders\regular">
+      <UniqueIdentifier>{f703a22e-f5e9-4480-b255-b770cb1ef90d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\shaders\font">
+      <UniqueIdentifier>{49c074ca-8e62-4449-aad2-fe161e127aca}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main_file.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shaderprogram.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tga.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="board.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="chessMan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="loadMoves.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="moveTypes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="init.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="clean.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="font.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="shaderprogram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tga.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="board.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="chessMan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="loadMoves.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="moveTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="init.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="clean.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lights.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="font.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="shaders\simple\fshader.txt">
+      <Filter>Resource Files\shaders\simple</Filter>
+    </Text>
+    <Text Include="shaders\simple\vshader.txt">
+      <Filter>Resource Files\shaders\simple</Filter>
+    </Text>
+    <Text Include="test.pgn">
+      <Filter>Resource Files\files</Filter>
+    </Text>
+    <Text Include="shaders\regular\fshader.txt">
+      <Filter>Resource Files\shaders\regular</Filter>
+    </Text>
+    <Text Include="shaders\regular\vshader.txt">
+      <Filter>Resource Files\shaders\regular</Filter>
+    </Text>
+    <Text Include="shaders\font\fshader.txt">
+      <Filter>Resource Files\shaders\font</Filter>
+    </Text>
+    <Text Include="shaders\font\vshader.txt">
+      <Filter>Resource Files\shaders\font</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

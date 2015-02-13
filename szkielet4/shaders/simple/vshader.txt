@@ -1,0 +1,25 @@
+#version 330
+
+//Proste cieniowanie nieuwzglêdniaj¹ce œwiate³, wykorzystywane przy rysowaniu odbiæ obiektów sceny 
+
+//Zmienne jednorodne
+uniform mat4 P;
+uniform mat4 V;
+uniform mat4 M;
+
+//Atrybuty
+in vec3 vertex; //wspolrzedne wierzcholka w przestrzeni modelu
+in vec3 normal; //wektor normalny w wierzcholku
+in vec2 texCoord; //wspolrzedne teksturowania
+
+//Zmienne wyjsciowe
+out vec2 iTexCoord;
+
+void main(void) {
+	vec4 tmp_vertex = vec4(vertex, 1.0);
+	vec4 tmp_normal = vec4(normal, 1.0);
+
+	gl_Position = P*V*M*tmp_vertex;
+
+	iTexCoord = texCoord;
+}

@@ -1,0 +1,59 @@
+#version 330
+
+//Standardowe cieniowanie obiektów sceny z wykorzystaniem wielu Ÿróde³ œwiat³a
+
+//Zmienne jednorodne
+uniform sampler2D textureMap0;
+uniform sampler2D textureMap1;
+uniform float shininess; //Polyskliwosc materialu
+uniform float alpha; //Wartoœæ kana³u alfa
+
+const int nol = 4; //Liczba zrodel swiatla
+
+//Atrybuty z vshadera
+in vec4 l[nol];
+in vec4 n;
+in vec4 v;
+in vec2 iTexCoord;
+
+//Zmienne wyjsciowe
+out vec4 pixelColor;
+
+void main(void) {
+	//Parametry modelu oswietlenia
+	vec4 La = vec4(0.4,0.4,0.4,1); //Kolor swiatla otoczenia
+	vec4 Ma = texture(textureMap0, iTexCoord); //Kolor materialu dla swiatla otoczenia
+
+	vec4 Ld = vec4(0.3,0.3,0.3,1); //Kolor swiatla rozpraszanego
+	vec4 Md = texture(textureMap0, iTexCoord); //Kolor materialu dla swiatla rozpraszanego
+
+	vec4 Ls = vec4(1,1,1,1); //Kolor swiatla odbijanego
+	vec4 Ms = texture(textureMap1, iTexCoord); //Kolor materialu dla swiatla odbijanego
+
+	int i;
+	vec4 ml[nol];
+	vec4 mr[nol];
+
+	//Wektory potrzebne do obliczenia modelu oswietlenia
+	vec4 mn = normalize(n);
+	for(i = 0; i < nol; i++) {
+		ml[i] = normalize(l[i]);
+		mr[i] = reflect(-ml[i], mn);
+	}
+	vec4 mv = normalize(v);
+
+	float nl[nol];
+	float rv[nol];
+
+	pixelColor = vec4(0,0,0,1);
+
+	//Obliczenie modelu oswietlenia
+	for(i = 0; i < nol; i++) {
+		nl[i] = max(dot(ml[i], mn), 0);
+		rv[i] = pow(max(dot(mr[i], mv), 0), shininess);
+		pixelColor += Ld*Md*vec4(nl[i],nl[i],nl[i],1) + Ls*Ms*vec4(rv[i],rv[i],rv[i],1)*2;
+	}
+	
+	pixelColor += La*Ma;
+	pixelColor.a = alpha;
+}

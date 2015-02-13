@@ -1,0 +1,35 @@
+#version 330
+
+//Standardowe cieniowanie obiektów sceny z wykorzystaniem wielu Ÿróde³ œwiat³a
+
+const int nol = 4; //Liczba zrodel swiatla
+
+//Zmienne jednorodne
+uniform mat4 P;
+uniform mat4 V;
+uniform mat4 M;
+uniform vec4 lpoz[nol];
+
+//Atrybuty
+in vec3 vertex; //wspolrzedne wierzcholka w przestrzeni modelu
+in vec3 normal; //wektor normalny w wierzcholku
+in vec2 texCoord; //wspolrzedne teksturowania
+
+//Zmienne wyjsciowe
+out vec4 l[nol];
+out vec4 n;
+out vec4 v;
+out vec2 iTexCoord;
+
+void main(void) {
+	vec4 tmp_vertex = vec4(vertex, 1.0);
+	vec4 tmp_normal = vec4(normal, 1.0);
+
+	gl_Position = P*V*M*tmp_vertex;
+
+	for(int i = 0; i < nol; i++)
+		l[i] = normalize(V*(lpoz[i] - M*tmp_vertex)); //wektor do swiatla w przestrzeni oka
+	n = normalize(V*M*tmp_normal); //wektor normalny w przestrzeni oka
+	v = normalize(vec4(0,0,0,1) - V*M*tmp_vertex); //wektor do obserwatora w przestrzeni oka
+	iTexCoord = texCoord;
+}

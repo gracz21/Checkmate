@@ -1,0 +1,19 @@
+#version 330
+
+//Cieniowanie dla czcionek
+
+//Zmienne jednorodne
+uniform mat4 P;
+uniform mat4 V;
+uniform mat4 M;
+
+//Atrybuty
+in vec4 coord; //Wspó³rzêdne tekstu + wspó³rzêdne teksturowania
+
+//Zmienne wyjœciowe
+out vec2 texCoord;
+
+void main(void) {
+	gl_Position = P*V*M*vec4(coord.xy,0,1);
+	texCoord = coord.zw;
+}
