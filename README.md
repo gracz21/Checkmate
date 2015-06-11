@@ -1,2 +1,2 @@
 # Checkmate
-Project for Computer Graphic and Visualization subject
+Project on Computer Graphic and Visualization subject
